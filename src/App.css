@@ -4,13 +4,16 @@
 }
 
 body {
-  background-image: ;
+  background-image: url("/images/Image1.jpeg");
+  background-repeat: no-repeat;
+  background-size: 150%;
 }
 
 .form {
   display: flex;
   justify-content: center;
 }
+
 .form form {
   display: flex;
   flex-direction: column;
@@ -19,8 +22,9 @@ body {
   padding: 50px;
   border-width: 2px;
   border-style: solid;
-  border-color: black;
+  border-color: lightcyan;
   border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 label {
@@ -40,4 +44,6 @@ button {
 input {
   padding: 5px;
   margin-bottom: 10px;
+  border-radius: 5px;
+  border-color: rgb(203, 218, 233);
 }
