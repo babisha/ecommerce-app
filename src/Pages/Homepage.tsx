@@ -36,14 +36,7 @@ function Homepage() {
   return (
     <> 
     <div>
-        <nav>
-            <input type="text" placeholder='SEARCH'/>
-            <a href="">LOGIN</a>
-            <a href="">CART</a>
-            <a href="">BLOGS</a>
-            
-            
-        </nav>
+        
 
         
     </div>
