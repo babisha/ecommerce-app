@@ -6,10 +6,16 @@ function Login() {
       <form>
         <h2>Login Here </h2>
         <label htmlFor="UserName">Username: </label>
-        <input type="text" id="UserName" placeholder="Enter your username..." />
+        <input
+          required
+          type="text"
+          id="UserName"
+          placeholder="Enter your username..."
+        />
 
         <label htmlFor="Password">Password: </label>
         <input
+          required
           type="password"
           id="Password"
           placeholder="Enter your password..."
