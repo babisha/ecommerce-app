@@ -1,4 +1,6 @@
 
+import Header from '../components/header'
+
 function Homepage() {
    
     // interface IObj {
@@ -36,8 +38,8 @@ function Homepage() {
   return (
     <> 
     <div>
-        
-
+    <Header />  
+     
         
     </div>
     </>

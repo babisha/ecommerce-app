@@ -1,4 +1,7 @@
 import React from 'react'
+import Shop from '../Pages/Shop'
+
+
 
 
 
@@ -7,21 +10,42 @@ interface ILinks {
     name: string,
     href: string,
 }
-   
-let links: Array<ILinks> 
-links = [
+
+// interface INewlinks {
+//   name: string,
+// }
+  
+// let newLinks : INewlinks,
+
+let links: Array<ILinks> = [
+    {name: 'SHOP', href:'/Pages/Shop.tsx' },
+    {name: 'ABOUT', href: ''},
+    {name: 'BLOGS', href: ''},
+    {name: 'BLOGS', href: ''},
     {name: 'LOGIN', href: ''},
-    {name: 'SHOP', href: ''},
-    {name: 'BLOGS', href: ''},   
+    {name: 'CART', href: ''},   
 ];
 console.log(links);
+
+
+
+
 function Navbar() {
     
   return (
     <div>
-        {links.map((items)=>(
-            <h1>{items.name}</h1>
-        ))}
+      
+      
+    <div className='box'>
+      <h1 className='text-3xl font-bold'>RE:_ _ _</h1>
+      
+      <button className='btnx'>X</button>
+      {links.map((items)=>(
+            <a>{items.name}</a>
+        ))} 
+      
+    </div>
+    
     </div>
   )
 }
