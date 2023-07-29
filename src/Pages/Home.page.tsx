@@ -1,9 +1,10 @@
 import React from 'react'
+import HamburgerMenu from '../components/header'
 
 function Homepage() {
   return (
-    <div className='text-3xl font-bold underline'>
-        HelloWorld
+    <div>
+        <HamburgerMenu />
     </div>
   )
 }
