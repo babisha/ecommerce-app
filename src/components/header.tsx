@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { HiOutlineMenu } from 'react-icons/hi'
 import Navbar from './navbar';
 
+
 // interface IHamburgerMenu {
 
 // }
@@ -15,12 +16,12 @@ const HamburgerMenu = () => {
     
   }
     return (
-    <div>
+    <div className='font-medium font-mono text-4xl fixed'>
         <HiOutlineMenu onClick= {handleMenu}/>
         <div className='menu-list'>
           {/* logic needed */}
             { isOpen ? <Navbar /> : <></>}
-            
+        
         </div>
     </div>
   )

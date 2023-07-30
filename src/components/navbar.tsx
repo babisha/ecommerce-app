@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { SiLeaflet } from "react-icons/si";
+import { AiOutlineClose } from "react-icons/ai";
 
 interface ILinks {
   name: string;
@@ -21,19 +23,27 @@ let links: Array<ILinks> = [
 ];
 console.log(links);
 
-function Navbar() {
-  return (
-    <div>
-      <div className="box">
-        <h1 className="text-3xl font-bold">RE:_ _ _</h1>
+const Navbar = () => {
+  //   [isClick, setIsClick] = useState(false);
 
-        <button className="btnx">X</button>
-        {links.map((items) => (
-          <a>{items.name}</a>
-        ))}
+  //   const HandleButton = () => {
+  //     setIsClick(!isClick);
+  // }
+
+  return (
+    <div className="flex flex-col bg-lime-900 justify-between m-2 w-48 p-3 fixed text-base space-y-6 text-yellow-100">
+      <div className="flex flex-row justify-around text-2xl ">
+        <SiLeaflet />
+        <h1>RE:_ _ _</h1>
+
+        {/* <button onClick={HandleButton} className="bg-lime-900 p-1 m-0"><AiOutlineClose /></button>
+        { isClick ? <CloseButton /> : <></>} */}
       </div>
+      {links.map((items) => (
+        <a>{items.name}</a>
+      ))}
     </div>
   );
-}
+};
 
 export default Navbar;
