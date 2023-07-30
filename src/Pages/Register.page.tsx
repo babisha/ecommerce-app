@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FormikValues } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
@@ -23,7 +23,7 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const submitHandler = (e: any) => {
+  const submitHandler = (e: FormikValues) => {
     e.preventDefault();
     navigate("/login");
   };
@@ -46,7 +46,11 @@ const Register = () => {
               name="fullName"
               placeholder="Enter your full Name..."
             />
-            <ErrorMessage name="fullName" component="div" />
+            <ErrorMessage
+              name="fullName"
+              component="div"
+              className="errorMessage"
+            />
           </div>
 
           <div className="formik">
@@ -58,7 +62,11 @@ const Register = () => {
               name="userName"
               placeholder="Enter your username..."
             />
-            <ErrorMessage name="userName" component="div" />
+            <ErrorMessage
+              name="userName"
+              component="div"
+              className="errorMessage"
+            />
           </div>
 
           <div className="formik">
@@ -70,7 +78,11 @@ const Register = () => {
               name="email"
               placeholder="Enter your email address..."
             />
-            <ErrorMessage name="email" component="div" />
+            <ErrorMessage
+              name="email"
+              component="div"
+              className="errorMessage"
+            />
           </div>
 
           <div className="formik">
@@ -82,7 +94,11 @@ const Register = () => {
               name="password"
               placeholder="Enter your password..."
             />
-            <ErrorMessage name="password" component="div" />
+            <ErrorMessage
+              name="password"
+              component="div"
+              className="errorMessage"
+            />
           </div>
 
           <div className="formik">
@@ -94,7 +110,11 @@ const Register = () => {
               name="confirmPassword"
               placeholder="Confirm your password..."
             />
-            <ErrorMessage name="confirmPassword" component="div" />
+            <ErrorMessage
+              name="confirmPassword"
+              component="div"
+              className="errorMessage"
+            />
           </div>
 
           <button type="submit">SIGN UP</button>

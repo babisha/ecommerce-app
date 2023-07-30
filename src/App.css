@@ -57,3 +57,7 @@ p span {
   color: blue;
   text-decoration: underline;
 }
+
+.errorMessage {
+  color: red;
+}
