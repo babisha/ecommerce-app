@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -61,3 +65,14 @@ p span {
 .errorMessage {
   color: red;
 }
+
+/* .box {
+  background-color:olivedrab;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+  position: fixed;
+  height: fit-content;
+} */
+
