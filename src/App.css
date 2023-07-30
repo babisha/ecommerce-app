@@ -11,7 +11,8 @@ body {
 
 .form {
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  margin-right: 150px;
 }
 
 .form form {
@@ -41,9 +42,18 @@ button {
   color: white;
 }
 
+label input {
+}
+
 input {
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
   border-color: rgb(203, 218, 233);
+  /* justify-content: end; */
+}
+
+p span {
+  color: blue;
+  text-decoration: underline;
 }
