@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 
 function Homepage() {
   return (
-    <>
+    <div className="container-background">
       <div>
         <HamburgerMenu />
       </div>
@@ -26,21 +26,27 @@ function Homepage() {
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
-                  src="https://dummyimage.com/500x300"
+                  src="/images/Bag1.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </div>
               <div className="md:p-2 p-1 w-1/2">
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
-                  src="https://dummyimage.com/501x301"
+                  src="/images/Bag2.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </div>
               <div className="md:p-2 p-1 w-full">
                 <img
                   alt="gallery"
                   className="w-full h-full object-cover object-center block"
-                  src="https://dummyimage.com/600x360"
+                  src="/images/Bag3.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </div>
             </div>
@@ -49,29 +55,35 @@ function Homepage() {
                 <img
                   alt="gallery"
                   className="w-full h-full object-cover object-center block"
-                  src="https://dummyimage.com/601x361"
+                  src="/images/Bag4.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </div>
               <div className="md:p-2 p-1 w-1/2">
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
-                  src="https://dummyimage.com/502x302"
+                  src="/images/Bag1.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </div>
               <div className="md:p-2 p-1 w-1/2">
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
-                  src="https://dummyimage.com/503x303"
+                  src="/images/Bag2.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <Footer/>
-    </>
+      <Footer />
+    </div>
   );
 }
 

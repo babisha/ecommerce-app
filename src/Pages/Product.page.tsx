@@ -5,7 +5,7 @@ import HamburgerMenu from "../components/header";
 
 function ProductPage() {
   return (
-    <>
+    <div className="container-background">
       <HamburgerMenu />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
@@ -15,7 +15,9 @@ function ProductPage() {
                 <img
                   alt="ecommerce"
                   className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/420x260"
+                  src="/images/Bag1.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </a>
               <div className="mt-4">
@@ -33,7 +35,9 @@ function ProductPage() {
                 <img
                   alt="ecommerce"
                   className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/421x261"
+                  src="/images/Bag2.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </a>
               <div className="mt-4">
@@ -51,7 +55,9 @@ function ProductPage() {
                 <img
                   alt="ecommerce"
                   className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/422x262"
+                  src="/images/Bag3.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </a>
               <div className="mt-4">
@@ -69,7 +75,9 @@ function ProductPage() {
                 <img
                   alt="ecommerce"
                   className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/423x263"
+                  src="/images/Bag4.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </a>
               <div className="mt-4">
@@ -87,7 +95,9 @@ function ProductPage() {
                 <img
                   alt="ecommerce"
                   className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/424x264"
+                  src="/images/Bag1.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </a>
               <div className="mt-4">
@@ -105,7 +115,9 @@ function ProductPage() {
                 <img
                   alt="ecommerce"
                   className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/425x265"
+                  src="/images/Bag2.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </a>
               <div className="mt-4">
@@ -123,7 +135,9 @@ function ProductPage() {
                 <img
                   alt="ecommerce"
                   className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/427x267"
+                  src="/images/Bag3.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </a>
               <div className="mt-4">
@@ -141,7 +155,9 @@ function ProductPage() {
                 <img
                   alt="ecommerce"
                   className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/428x268"
+                  src="/images/Bag4.jpg"
+                  height="300px"
+                  width="450px"
                 />
               </a>
               <div className="mt-4">
@@ -157,10 +173,9 @@ function ProductPage() {
           </div>
         </div>
       </section>
-      
 
       <Footer />
-    </>
+    </div>
   );
 }
 
