@@ -1,6 +1,4 @@
-import React, { useState } from "react";
 import { SiLeaflet } from "react-icons/si";
-import { AiOutlineClose } from "react-icons/ai";
 
 interface ILinks {
   name: string;

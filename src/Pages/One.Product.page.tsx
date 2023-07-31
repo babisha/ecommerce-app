@@ -1,10 +1,31 @@
-import React from "react";
+import React , { useEffect, useState } from "react";
 import Footer from "../components/footer";
-import ProductPage from "./Product.page";
+import HamburgerMenu from "../components/header";
+import { useParams } from "react-router-dom";
+
 
 function EachProduct() {
+    const { id } = useParams();
+    const [eachProduct, setEachProduct] = useState({})
+    
+    useEffect(() => {
+        const fetchProduct = async () => {
+          const response = await fetch("https://fakestoreapi.com/products/${id}");
+          const data = await response.json();
+          console.log(data);
+          setEachProduct(data);
+        };
+        fetchProduct();
+      }, []);
+
+
   return (
     <>
+    <HamburgerMenu/>
+
+      {
+        
+      }
       <section className="text-gray-600 body-font overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
@@ -182,7 +203,7 @@ function EachProduct() {
           </div>
         </div>
       </section>
-      <ProductPage />
+      <Footer/>
       
     </>
   );

@@ -16,7 +16,7 @@ const HamburgerMenu = () => {
     
   }
     return (
-    <div className='font-medium font-mono text-4xl fixed'>
+    <div className='font-medium font-mono text-4xl fixed cursor-pointer'>
         <HiOutlineMenu onClick= {handleMenu}/>
         <div className='menu-list'>
           {/* logic needed */}

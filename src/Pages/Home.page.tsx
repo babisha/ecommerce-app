@@ -1,13 +1,14 @@
-import React from "react";
 import HamburgerMenu from "../components/header";
 import Footer from "../components/footer";
+import ProductPage from "./Product.page";
 
-function Homepage() {
+const Homepage = () => {
   return (
     <>
       <div>
         <HamburgerMenu />
       </div>
+
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           <div className="flex w-full mb-20 flex-wrap">
@@ -70,9 +71,9 @@ function Homepage() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
-}
+};
 
 export default Homepage;

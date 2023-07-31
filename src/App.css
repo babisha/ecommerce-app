@@ -8,7 +8,8 @@
 }
 
 body {
-  background-image: url("/images/Image1.jpeg");
+  /* background-image: url("/images/Image1.jpeg"); */
+  background-color: white;
   background-repeat: no-repeat;
   background-size: 150%;
 }
@@ -52,13 +53,5 @@ input {
   border-color: rgb(203, 218, 233);
 }
 
-/* .box {
-  background-color:olivedrab;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: left;
-  position: fixed;
-  height: fit-content;
-} */
+
 
