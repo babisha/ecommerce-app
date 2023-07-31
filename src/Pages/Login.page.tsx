@@ -28,15 +28,16 @@ function Login() {
         validationSchema={validationSchema}
         onSubmit={submitHandler}
       >
-        <Form onSubmit={submitHandler}>
+        <Form onSubmit={submitHandler} className="form-container">
           <h2>Login Here </h2>
           <div className="formik">
-            <label htmlFor="userName">userName: </label>
+            <label htmlFor="userName">Username: </label>
             <Field
               required
               type="text"
               id="userName"
               name="userName"
+              className="formik-field"
               placeholder="Enter your username..."
             />
             <ErrorMessage
@@ -53,6 +54,7 @@ function Login() {
               type="password"
               id="password"
               name="password"
+              className="formik-field"
               placeholder="Enter your password..."
             />
             <ErrorMessage

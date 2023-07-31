@@ -35,7 +35,7 @@ const Register = () => {
         validationSchema={validationSchema}
         onSubmit={submitHandler}
       >
-        <Form onSubmit={submitHandler}>
+        <Form onSubmit={submitHandler} className="form-container">
           <h2>Register Here </h2>
           <div className="formik">
             <label htmlFor="fullName">Full Name: </label>
@@ -44,6 +44,7 @@ const Register = () => {
               type="text"
               id="fullName"
               name="fullName"
+              className="formik-field"
               placeholder="Enter your full Name..."
             />
             <ErrorMessage
@@ -60,6 +61,7 @@ const Register = () => {
               type="text"
               id="userName"
               name="userName"
+              className="formik-field"
               placeholder="Enter your username..."
             />
             <ErrorMessage
@@ -76,6 +78,7 @@ const Register = () => {
               type="text"
               id="email"
               name="email"
+              className="formik-field"
               placeholder="Enter your email address..."
             />
             <ErrorMessage
@@ -92,6 +95,7 @@ const Register = () => {
               type="password"
               id="password"
               name="password"
+              className="formik-field"
               placeholder="Enter your password..."
             />
             <ErrorMessage
@@ -108,6 +112,7 @@ const Register = () => {
               type="password"
               id="confirmPassword"
               name="confirmPassword"
+              className="formik-field"
               placeholder="Confirm your password..."
             />
             <ErrorMessage

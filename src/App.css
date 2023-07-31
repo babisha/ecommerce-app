@@ -71,3 +71,7 @@ p span {
   position: fixed;
   height: fit-content;
 } */
+
+.form-container .formik-field {
+  display: flex;
+}
