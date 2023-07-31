@@ -119,7 +119,8 @@ const Register = () => {
 
           <button type="submit">SIGN UP</button>
           <p>
-            Already have an account? <span>Sign in.</span>
+            Already have an account?{" "}
+            <span onClick={submitHandler}>Sign in.</span>
           </p>
         </Form>
       </Formik>

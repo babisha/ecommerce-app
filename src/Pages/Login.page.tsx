@@ -65,7 +65,15 @@ function Login() {
 
           <p>Forgot your password?</p>
           <p>
-            New user? <span>Sign Up.</span>
+            New user?{" "}
+            <span
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/");
+              }}
+            >
+              Sign Up.
+            </span>
           </p>
         </Form>
       </Formik>
