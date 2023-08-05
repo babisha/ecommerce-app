@@ -25,7 +25,7 @@ const ProductPage = () => {
     fetchProducts();
   }, []);
   return (
-    <div className="container-background">
+    <>
       <HamburgerMenu />
 
       <section className="text-gray-600 body-font">
@@ -70,7 +70,7 @@ const ProductPage = () => {
         </div>
       </section>
       <Footer />
-    </div>
+    </>
   );
 };
 
