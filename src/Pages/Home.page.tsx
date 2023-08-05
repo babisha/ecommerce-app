@@ -5,7 +5,7 @@ import ProductPage from "./Product.page";
 const Homepage = () => {
   return (
     <>
-    <div className="container-background">
+    
       <div>
         <HamburgerMenu />
       </div>
@@ -84,7 +84,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
-      </div>
+    
       <Footer />
     </>
   );
