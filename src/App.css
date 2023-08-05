@@ -69,8 +69,9 @@ p span {
   color: red;
 }
 
-/* .box {
-  background-color:olivedrab;
+
+
+.form-container .formik-field {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
