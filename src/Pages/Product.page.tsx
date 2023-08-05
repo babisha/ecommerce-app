@@ -47,7 +47,7 @@ const ProductPage = () => {
 
               return (
                 <div className="lg:w-1/4 md:w-1/2 p-4 w-full border border-opcaity-55 mb-4 cursor-pointer">
-                  <a className="block relative h-48 rounded overflow-hidden ">
+                  <a className="block h-48 rounded overflow-hidden ">
                     <img
                       alt={title}
                       className="object-contain object-center w-full h-full block"

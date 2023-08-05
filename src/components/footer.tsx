@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 import { SiLeaflet } from "react-icons/si";
 
 function Footer() {
   return (
     <>
-    <footer className="text-gray-600 body-font">
+      <footer className="text-gray-600 body-font">
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-          <a className="flex title-font font-medium items-center md:justify-start justify-center text-yellow-100">
-            <SiLeaflet/>
+          <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-600">
+            <SiLeaflet />
             <span className="ml-3 text-xl">RE:_ _ _</span>
           </a>
           <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-            © 2023 RE:DUCE_USE_CYCLE_
+            © 2023 REDUCE_USE_CYCLE_
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a className="text-gray-500">
@@ -73,7 +73,7 @@ function Footer() {
         </div>
       </footer>
     </>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

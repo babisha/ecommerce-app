@@ -1,50 +1,134 @@
-import React from "react";
+import { Formik, Form, Field, ErrorMessage, FormikValues } from "formik";
+import { useNavigate } from "react-router-dom";
+import * as Yup from "yup";
 
 const Register = () => {
+  const initialValues = {
+    fullName: "",
+    userName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
+
+  const validationSchema = Yup.object({
+    fullName: Yup.string().required("*Enter Full Name*"),
+    userName: Yup.string().required("*Enter Username*"),
+    email: Yup.string().required("*Enter Email Address*"),
+    password: Yup.string().required("*Enter Password*"),
+    confirmPassword: Yup.string()
+      .required("*Please Confirm Password*")
+      .oneOf([Yup.ref("password")], "*Passwords must match*"),
+  });
+
+  const navigate = useNavigate();
+
+  const submitHandler = (e: FormikValues) => {
+    e.preventDefault();
+    navigate("/login");
+  };
+
   return (
     <div className="form">
-      <form>
-        <h2>Register Here </h2>
-        <label htmlFor="FullName">Full Name: </label>
-        <input
-          required
-          type="text"
-          id="FullName"
-          placeholder="Enter your full Name..."
-        />
-        <label htmlFor="UserName">Username: </label>
-        <input
-          required
-          type="text"
-          id="UserName"
-          placeholder="Enter your username..."
-        />
-        <label htmlFor="EmailAddress">Email address: </label>
-        <input
-          required
-          type="text"
-          id="EmailAddress"
-          placeholder="Enter your email address..."
-        />
-        <label htmlFor="Password">Password: </label>
-        <input
-          required
-          type="password"
-          id="Password"
-          placeholder="Enter your password..."
-        />
-        <label htmlFor="ConfirmPassword">Confirm Password: </label>
-        <input
-          required
-          type="password"
-          id="ConfirmPassword"
-          placeholder="Enter your password again..."
-        />
-        <button>SIGN UP</button>
-        <p>
-          Already have an account? <span>Sign in.</span>
-        </p>
-      </form>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={submitHandler}
+      >
+        <Form onSubmit={submitHandler} className="form-container">
+          <h2>Register Here </h2>
+          <div className="formik">
+            <label htmlFor="fullName">Full Name: </label>
+            <Field
+              required
+              type="text"
+              id="fullName"
+              name="fullName"
+              className="formik-field"
+              placeholder="Enter your full Name..."
+            />
+            <ErrorMessage
+              name="fullName"
+              component="div"
+              className="errorMessage"
+            />
+          </div>
+
+          <div className="formik">
+            <label htmlFor="userName">Username: </label>
+            <Field
+              required
+              type="text"
+              id="userName"
+              name="userName"
+              className="formik-field"
+              placeholder="Enter your username..."
+            />
+            <ErrorMessage
+              name="userName"
+              component="div"
+              className="errorMessage"
+            />
+          </div>
+
+          <div className="formik">
+            <label htmlFor="email">Email address: </label>
+            <Field
+              required
+              type="text"
+              id="email"
+              name="email"
+              className="formik-field"
+              placeholder="Enter your email address..."
+            />
+            <ErrorMessage
+              name="email"
+              component="div"
+              className="errorMessage"
+            />
+          </div>
+
+          <div className="formik">
+            <label htmlFor="password">Password: </label>
+            <Field
+              required
+              type="password"
+              id="password"
+              name="password"
+              className="formik-field"
+              placeholder="Enter your password..."
+            />
+            <ErrorMessage
+              name="password"
+              component="div"
+              className="errorMessage"
+            />
+          </div>
+
+          <div className="formik">
+            <label htmlFor="confirmPassword">Confirm Password: </label>
+            <Field
+              required
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              className="formik-field"
+              placeholder="Confirm your password..."
+            />
+            <ErrorMessage
+              name="confirmPassword"
+              component="div"
+              className="errorMessage"
+            />
+          </div>
+
+          <button type="submit">SIGN UP</button>
+          <p>
+            Already have an account?{" "}
+            <span onClick={submitHandler}>Sign in.</span>
+          </p>
+        </Form>
+      </Formik>
     </div>
   );
 };

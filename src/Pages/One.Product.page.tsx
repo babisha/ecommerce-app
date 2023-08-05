@@ -20,7 +20,7 @@ function EachProduct() {
 
 
   return (
-    <>
+    <div className="container-background">
     <HamburgerMenu/>
 
       {
@@ -32,7 +32,9 @@ function EachProduct() {
             <img
               alt="ecommerce"
               className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-              src="https://dummyimage.com/400x400"
+              src="/images/Bag1.jpg"
+              height="500px"
+              width="750px"
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">
@@ -193,7 +195,7 @@ function EachProduct() {
                     stroke-linejoin="round"
                     stroke-width="2"
                     className="w-5 h-5"
-                    viewBox="0 0 24 24"
+                    viewBox="-0 0 24 24"
                   >
                     <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
                   </svg>
@@ -204,8 +206,7 @@ function EachProduct() {
         </div>
       </section>
       <Footer/>
-      
-    </>
+    </div>
   );
 }
 
