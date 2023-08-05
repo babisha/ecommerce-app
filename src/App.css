@@ -1,10 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-image: url("/images/Image1.jpeg");
+  /* background-image: url("/images/Image1.jpeg"); */
+  background-color: white;
   background-repeat: no-repeat;
   background-size: 150%;
 }
@@ -47,3 +52,6 @@ input {
   border-radius: 5px;
   border-color: rgb(203, 218, 233);
 }
+
+
+
