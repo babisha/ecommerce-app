@@ -29,7 +29,7 @@ const Navbar = () => {
   // }
 
   return (
-    <div className="flex flex-col bg-lime-900 justify-between m-2 w-48 p-3 fixed text-base space-y-6 text-yellow-100">
+    <div className="flex flex-col bg-lime-900 justify-evenly m-2 w-48 p-3 h-[80%] fixed text-base space-y-6 text-yellow-100">
       <div className="flex flex-row justify-around text-2xl ">
         <SiLeaflet />
         <h1>RE:_ _ _</h1>
