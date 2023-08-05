@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../components/footer";
+import { useNavigate } from "react-router-dom";
 
 import HamburgerMenu from "../components/header";
 
@@ -24,6 +25,14 @@ const ProductPage = () => {
     };
     fetchProducts();
   }, []);
+
+  const navigate = useNavigate();
+
+  const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    navigate("/products/:id");
+  };
+
   return (
     <>
       <HamburgerMenu />
@@ -46,7 +55,10 @@ const ProductPage = () => {
               }: Iproducts = product;
 
               return (
-                <div className="lg:w-1/4 md:w-1/2 p-4 w-full border border-opcaity-55 mb-4 cursor-pointer">
+                <div
+                  onClick={handleClick}
+                  className="lg:w-1/4 md:w-1/2 p-4 w-full border border-opcaity-55 mb-4 cursor-pointer"
+                >
                   <a className="block h-48 rounded overflow-hidden ">
                     <img
                       alt={title}
