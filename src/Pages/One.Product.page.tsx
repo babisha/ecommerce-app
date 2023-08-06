@@ -1,47 +1,56 @@
-import React , { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../components/footer";
 import HamburgerMenu from "../components/header";
 import { useParams } from "react-router-dom";
 
+interface IEachProduct {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+}
 
 function EachProduct() {
-    const { id } = useParams();
-    const [eachProduct, setEachProduct] = useState({})
-    
-    useEffect(() => {
-        const fetchProduct = async () => {
-          const response = await fetch("https://fakestoreapi.com/products/${id}");
-          const data = await response.json();
-          console.log(data);
-          setEachProduct(data);
-        };
-        fetchProduct();
-      }, []);
+  const { id } = useParams();
+  const [eachProduct, setEachProduct] = useState<IEachProduct>({});
 
+  useEffect(() => {
+    const fetchEachProduct = async () => {
+      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const data = await response.json();
+      console.log(data);
+      setEachProduct(data);
+    };
+    fetchEachProduct();
+  }, []);
+  console.log(eachProduct);
+
+  !(Object.keys(eachProduct).length > 0) && <div>Product Not Found</div>;
 
   return (
     <div className="container-background">
-    <HamburgerMenu/>
+      <HamburgerMenu />
 
-      {
-        
-      }
       <section className="text-gray-600 body-font overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
-          <div className="lg:w-4/5 mx-auto flex flex-wrap">
+          {/* {eachProduct.map((product) => {
+            return (  */}
+          <div key={eachProduct.id} className="lg:w-4/5 mx-auto flex flex-wrap">
             <img
               alt="ecommerce"
               className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-              src="/images/Bag1.jpg"
+              src={eachProduct?.image}
               height="500px"
               width="750px"
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">
-                BRAND NAME
+                {eachProduct.category}
               </h2>
               <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-                The Catcher in the Rye
+                {eachProduct.title}
               </h1>
               <div className="flex mb-4">
                 <span className="flex items-center">
@@ -141,14 +150,7 @@ function EachProduct() {
                   </a>
                 </span>
               </div>
-              <p className="leading-relaxed">
-                Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-                sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo
-                juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
-                seitan poutine tumeric. Gastropub blue bottle austin listicle
-                pour-over, neutra jean shorts keytar banjo tattooed umami
-                cardigan.
-              </p>
+              <p className="leading-relaxed">{eachProduct.description}</p>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                 <div className="flex">
                   <span className="mr-3">Color</span>
@@ -183,7 +185,7 @@ function EachProduct() {
               </div>
               <div className="flex">
                 <span className="title-font font-medium text-2xl text-gray-900">
-                  $58.00
+                  {eachProduct.price}
                 </span>
                 <button className="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">
                   ADD TO CART
@@ -203,9 +205,12 @@ function EachProduct() {
               </div>
             </div>
           </div>
+          {/* );
+          })}  */}
         </div>
       </section>
-      <Footer/>
+
+      <Footer />
     </div>
   );
 }

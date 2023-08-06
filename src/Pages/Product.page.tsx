@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import HamburgerMenu from "../components/header";
 
 interface Iproducts {
-  id: string;
+  id: number;
   title: string;
   price: number;
   description: string;
@@ -14,7 +14,7 @@ interface Iproducts {
 }
 
 const ProductPage = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Iproducts[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -28,9 +28,8 @@ const ProductPage = () => {
 
   const navigate = useNavigate();
 
-  const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    navigate("/products/:id");
+  const handleClick = (id: number) => {
+    navigate(`/products/${id}`);
   };
 
   return (
@@ -56,7 +55,8 @@ const ProductPage = () => {
 
               return (
                 <div
-                  onClick={handleClick}
+                  key={id}
+                  onClick={() => handleClick(id)}
                   className="lg:w-1/4 md:w-1/2 p-4 w-full border border-opcaity-55 mb-4 cursor-pointer"
                 >
                   <a className="block h-48 rounded overflow-hidden ">
