@@ -215,7 +215,7 @@ function EachProduct() {
               </div>
               <div className="flex">
                 <span className="title-font font-medium text-2xl text-gray-900">
-                  {eachProduct.price}
+                  ${eachProduct.price}
                 </span>
                 <button
                   onClick={() => handleCart(eachProduct)}
