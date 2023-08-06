@@ -1,7 +1,7 @@
-import React from "react";
-import { Formik, Form, Field, ErrorMessage, FormikValues } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import "../App.css";
 
 function Login() {
   const initialValues = {
@@ -41,9 +41,9 @@ function Login() {
         validationSchema={validationSchema}
         onSubmit={submitHandler}
       >
-        <Form className="width-max-content flex flex-col w-max-content mr-[150px] mt-[50px] mb-[50px] p-[50px] border-[2px] border-solid border-cyan-100 rounded transparent-bg-color ">
+        <Form className="width-max-content flex flex-col mr-[150px] mt-[50px] mb-[50px] p-[50px] border-[2px] border-solid border-cyan-100 rounded transparent-bg-color ">
           <h2 className="text-2xl mb-[10px] font-semibold">Login Here </h2>
-          <div className="formik">
+          <div>
             <label htmlFor="userName" className="my-[5px] text-sm font-bold">
               Username:{" "}
             </label>
@@ -52,7 +52,7 @@ function Login() {
               type="text"
               id="userName"
               name="userName"
-              className="input input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px]"
               placeholder="Enter your username..."
             />
             <ErrorMessage
@@ -71,7 +71,7 @@ function Login() {
               type="password"
               id="password"
               name="password"
-              className="input input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px]"
               placeholder="Enter your password..."
             />
             <ErrorMessage

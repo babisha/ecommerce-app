@@ -36,9 +36,9 @@ const Register = () => {
         validationSchema={validationSchema}
         onSubmit={submitHandler}
       >
-        <Form className="width-max-content flex flex-col w-max-content mr-[150px] mt-[50px] mb-[50px] p-[50px] border-[2px] border-solid border-cyan-100 rounded transparent-bg-color ">
+        <Form className="width-max-content flex flex-col mr-[150px] mt-[50px] mb-[50px] p-[50px] border-[2px] border-solid border-cyan-100 rounded transparent-bg-color ">
           <h2 className="text-2xl mb-[10px] font-semibold">Register Here </h2>
-          <div className="">
+          <div>
             <label htmlFor="fullName" className="my-[5px] text-sm font-bold">
               Full Name:{" "}
             </label>
@@ -47,7 +47,7 @@ const Register = () => {
               type="text"
               id="fullName"
               name="fullName"
-              className="input input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px] w-[100%]"
               placeholder="Enter your full Name..."
             />
             <ErrorMessage
@@ -66,7 +66,7 @@ const Register = () => {
               type="text"
               id="userName"
               name="userName"
-              className="input input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px] w-[100%]"
               placeholder="Enter your username..."
             />
             <ErrorMessage
@@ -85,7 +85,7 @@ const Register = () => {
               type="text"
               id="email"
               name="email"
-              className="input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px] w-[100%]"
               placeholder="Enter your email address..."
             />
             <ErrorMessage
@@ -104,7 +104,7 @@ const Register = () => {
               type="password"
               id="password"
               name="password"
-              className="input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px] w-[100%]"
               placeholder="Enter your password..."
             />
             <ErrorMessage
@@ -126,7 +126,7 @@ const Register = () => {
               type="password"
               id="confirmPassword"
               name="confirmPassword"
-              className="input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px] w-[100%]"
               placeholder="Confirm your password..."
             />
             <ErrorMessage
@@ -139,6 +139,7 @@ const Register = () => {
           <button type="submit" className="primary-button">
             SIGN UP
           </button>
+
           <p>
             Already have an account?{" "}
             <span
