@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/navbar";
 import HamburgerMenu from "../components/header";
 
 function CartPage() {
@@ -58,9 +57,9 @@ function CartPage() {
                   </svg>
 
                   <input
-                    className="mx-2 border text-center w-8"
+                    className="mx-2 border text-center w-8 text-black-500"
                     type="text"
-                    value="1"
+                    placeholder="1"
                   />
 
                   <svg
