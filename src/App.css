@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   margin: 0;
   box-sizing: border-box;
@@ -12,41 +11,21 @@
   background-color: rgb(215, 228, 227);
 }
 
-.form {
-  display: flex;
-  justify-content: end;
-  background-image: url("/images/Image1.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-}
-
-form.form-container {
-  margin-right: 150px;
-  margin-bottom: 100px;
-}
-
-.form form {
-  display: flex;
-  flex-direction: column;
+.width-max-content {
   width: max-content;
-  margin-top: 100px;
-  padding: 50px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: lightcyan;
-  border-radius: 10px;
+}
+
+.transparent-bg-color {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-label {
+.label {
   margin: 5px 0px;
   font-size: smaller;
   font-weight: bold;
 }
 
-button {
+.primary-button {
   margin: 10px 0px;
   padding: 10px 0px;
   background-color: rgb(33, 33, 184);
@@ -54,34 +33,12 @@ button {
   color: white;
 }
 
-label input {
-}
-
-input {
-  padding: 5px;
+.input {
   margin-bottom: 10px;
   border-radius: 5px;
   border-color: rgb(203, 218, 233);
-  /* justify-content: end; */
-}
-
-p span {
-  color: blue;
-  text-decoration: underline;
-}
-
-.errorMessage {
-  color: red;
 }
 
 .form-container .formik-field {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: left;
-  position: fixed;
   height: fit-content;
-}
-*/ .form-container .formik-field {
-  display: flex;
 }
