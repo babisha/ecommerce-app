@@ -12,7 +12,7 @@ let links: Array<ILinks> = [
   { name: "BLOGS", href: "" },
   { name: "BLOGS", href: "" },
   { name: "LOGIN", href: "/login" },
-  { name: "CART", href: "" },
+  { name: "CART", href: "/cartpage" },
 ];
 console.log(links);
 
