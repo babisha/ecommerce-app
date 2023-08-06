@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage, FormikValues } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import "../App.css";
@@ -24,8 +24,8 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const submitHandler = (e: FormikValues) => {
-    e.preventDefault();
+  const submitHandler = (values: typeof initialValues) => {
+    localStorage.setItem("registeredUser", JSON.stringify(values));
     navigate("/login");
   };
 
@@ -36,12 +36,9 @@ const Register = () => {
         validationSchema={validationSchema}
         onSubmit={submitHandler}
       >
-        <Form
-          onSubmit={submitHandler}
-          className="width-max-content flex flex-col w-max-content mr-[150px] mt-[50px] mb-[50px] p-[50px] border-[2px] border-solid border-cyan-100 rounded transparent-bg-color "
-        >
-          <h2 className="text-2xl my-[5px]">Register Here </h2>
-          <div className="">
+        <Form className="width-max-content flex flex-col mr-[150px] mt-[50px] mb-[50px] p-[50px] border-[2px] border-solid border-cyan-100 rounded transparent-bg-color ">
+          <h2 className="text-2xl mb-[10px] font-semibold">Register Here </h2>
+          <div>
             <label htmlFor="fullName" className="my-[5px] text-sm font-bold">
               Full Name:{" "}
             </label>
@@ -50,7 +47,7 @@ const Register = () => {
               type="text"
               id="fullName"
               name="fullName"
-              className="input input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px] w-[100%]"
               placeholder="Enter your full Name..."
             />
             <ErrorMessage
@@ -69,7 +66,7 @@ const Register = () => {
               type="text"
               id="userName"
               name="userName"
-              className="input input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px] w-[100%]"
               placeholder="Enter your username..."
             />
             <ErrorMessage
@@ -88,7 +85,7 @@ const Register = () => {
               type="text"
               id="email"
               name="email"
-              className="input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px] w-[100%]"
               placeholder="Enter your email address..."
             />
             <ErrorMessage
@@ -107,7 +104,7 @@ const Register = () => {
               type="password"
               id="password"
               name="password"
-              className="input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px] w-[100%]"
               placeholder="Enter your password..."
             />
             <ErrorMessage
@@ -129,7 +126,7 @@ const Register = () => {
               type="password"
               id="confirmPassword"
               name="confirmPassword"
-              className="input flex flex-col justify-around items-left p-[5px]"
+              className="input flex flex-col justify-around items-left p-[5px] w-[100%]"
               placeholder="Confirm your password..."
             />
             <ErrorMessage
@@ -142,10 +139,14 @@ const Register = () => {
           <button type="submit" className="primary-button">
             SIGN UP
           </button>
+
           <p>
             Already have an account?{" "}
             <span
-              onClick={submitHandler}
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/login");
+              }}
               className="text-blue-700 underline hover:cursor-pointer"
             >
               Sign in.
