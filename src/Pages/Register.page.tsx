@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage, FormikValues } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import "../App.css";
@@ -142,7 +142,10 @@ const Register = () => {
           <p>
             Already have an account?{" "}
             <span
-              onClick={submitHandler}
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/login");
+              }}
               className="text-blue-700 underline hover:cursor-pointer"
             >
               Sign in.
