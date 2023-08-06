@@ -13,8 +13,15 @@ interface IEachProduct {
 }
 
 function EachProduct() {
-  const { id } = useParams();
-  const [eachProduct, setEachProduct] = useState<IEachProduct>({});
+  const { id } = useParams<{ id: string }>();
+  const [eachProduct, setEachProduct] = useState<IEachProduct>({
+    id: 0,
+    title: "",
+    price: 0,
+    description: "",
+    category: "",
+    image: "",
+  });
 
   useEffect(() => {
     const fetchEachProduct = async () => {
@@ -27,6 +34,29 @@ function EachProduct() {
   }, []);
   console.log(eachProduct);
 
+  const handleCart = (product: any) => {
+    console.log(product);
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const isProductExist = cart.find((item: any) => item.id === product.id);
+    if (isProductExist) {
+      const updatedCart = cart.map((item: any) => {
+        if (item.id === product.id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
+        }
+        return item;
+      });
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    } else {
+      localStorage.setItem(
+        "cart",
+        JSON.stringify([...cart, { ...eachProduct, quantity: 1 }])
+      );
+    }
+    alert("Product Added To The Cart");
+  };
   !(Object.keys(eachProduct).length > 0) && <div>Product Not Found</div>;
 
   return (
@@ -187,7 +217,10 @@ function EachProduct() {
                 <span className="title-font font-medium text-2xl text-gray-900">
                   {eachProduct.price}
                 </span>
-                <button className="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">
+                <button
+                  onClick={() => handleCart(eachProduct)}
+                  className="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded"
+                >
                   ADD TO CART
                 </button>
                 <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
