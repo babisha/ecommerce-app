@@ -1,18 +1,13 @@
 import { SiLeaflet } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 interface ILinks {
   name: string;
   href: string;
 }
 
-// interface INewlinks {
-//   name: string,
-// }
-
-// let newLinks : INewlinks,
-
 let links: Array<ILinks> = [
-  { name: "SHOP", href: "/Pages/Shop.tsx" },
+  { name: "SHOP", href: "/products" },
   { name: "ABOUT", href: "" },
   { name: "BLOGS", href: "" },
   { name: "BLOGS", href: "" },
@@ -38,7 +33,9 @@ const Navbar = () => {
         { isClick ? <CloseButton /> : <></>} */}
       </div>
       {links.map((items) => (
-        <a>{items.name}</a>
+        <Link key={items.name} to={items.href} className="cursor-pointer">
+          {items.name}
+        </Link>
       ))}
     </div>
   );
