@@ -11,7 +11,7 @@ let links: Array<ILinks> = [
   { name: "ABOUT", href: "" },
   { name: "BLOGS", href: "" },
   { name: "BLOGS", href: "" },
-  { name: "LOGIN", href: "" },
+  { name: "LOGIN", href: "/login" },
   { name: "CART", href: "" },
 ];
 console.log(links);

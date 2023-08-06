@@ -24,8 +24,8 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const submitHandler = (e: FormikValues) => {
-    e.preventDefault();
+  const submitHandler = (values: typeof initialValues) => {
+    localStorage.setItem("registeredUser", JSON.stringify(values));
     navigate("/login");
   };
 
@@ -36,11 +36,8 @@ const Register = () => {
         validationSchema={validationSchema}
         onSubmit={submitHandler}
       >
-        <Form
-          onSubmit={submitHandler}
-          className="width-max-content flex flex-col w-max-content mr-[150px] mt-[50px] mb-[50px] p-[50px] border-[2px] border-solid border-cyan-100 rounded transparent-bg-color "
-        >
-          <h2 className="text-2xl my-[5px]">Register Here </h2>
+        <Form className="width-max-content flex flex-col w-max-content mr-[150px] mt-[50px] mb-[50px] p-[50px] border-[2px] border-solid border-cyan-100 rounded transparent-bg-color ">
+          <h2 className="text-2xl mb-[10px] font-semibold">Register Here </h2>
           <div className="">
             <label htmlFor="fullName" className="my-[5px] text-sm font-bold">
               Full Name:{" "}
