@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage, FormikValues } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import "../App.css";
 
 const Register = () => {
   const initialValues = {
@@ -29,103 +30,126 @@ const Register = () => {
   };
 
   return (
-    <div className="form">
+    <div className="flex justify-end bg-Bg-img bg-cover bg-repeat-none w-[100%] h-[100vh]">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={submitHandler}
       >
-        <Form onSubmit={submitHandler} className="form-container">
-          <h2>Register Here </h2>
-          <div className="formik">
-            <label htmlFor="fullName">Full Name: </label>
+        <Form
+          onSubmit={submitHandler}
+          className="width-max-content flex flex-col w-max-content mr-[150px] mt-[50px] mb-[50px] p-[50px] border-[2px] border-solid border-cyan-100 rounded transparent-bg-color "
+        >
+          <h2 className="text-2xl my-[5px]">Register Here </h2>
+          <div className="">
+            <label htmlFor="fullName" className="my-[5px] text-sm font-bold">
+              Full Name:{" "}
+            </label>
             <Field
               required
               type="text"
               id="fullName"
               name="fullName"
-              className="formik-field"
+              className="input input flex flex-col justify-around items-left p-[5px]"
               placeholder="Enter your full Name..."
             />
             <ErrorMessage
               name="fullName"
               component="div"
-              className="errorMessage"
+              className="text-red-600"
             />
           </div>
 
-          <div className="formik">
-            <label htmlFor="userName">Username: </label>
+          <div className="">
+            <label htmlFor="userName" className="my-[5px] text-sm font-bold">
+              Username:{" "}
+            </label>
             <Field
               required
               type="text"
               id="userName"
               name="userName"
-              className="formik-field"
+              className="input input flex flex-col justify-around items-left p-[5px]"
               placeholder="Enter your username..."
             />
             <ErrorMessage
               name="userName"
               component="div"
-              className="errorMessage"
+              className="text-red-600"
             />
           </div>
 
-          <div className="formik">
-            <label htmlFor="email">Email address: </label>
+          <div className="">
+            <label htmlFor="email" className="my-[5px] text-sm font-bold">
+              Email address:{" "}
+            </label>
             <Field
               required
               type="text"
               id="email"
               name="email"
-              className="formik-field"
+              className="input flex flex-col justify-around items-left p-[5px]"
               placeholder="Enter your email address..."
             />
             <ErrorMessage
               name="email"
               component="div"
-              className="errorMessage"
+              className="text-red-600"
             />
           </div>
 
-          <div className="formik">
-            <label htmlFor="password">Password: </label>
+          <div className="">
+            <label htmlFor="password" className="my-[5px] text-sm font-bold">
+              Password:{" "}
+            </label>
             <Field
               required
               type="password"
               id="password"
               name="password"
-              className="formik-field"
+              className="input flex flex-col justify-around items-left p-[5px]"
               placeholder="Enter your password..."
             />
             <ErrorMessage
               name="password"
               component="div"
-              className="errorMessage"
+              className="text-red-600"
             />
           </div>
 
-          <div className="formik">
-            <label htmlFor="confirmPassword">Confirm Password: </label>
+          <div className="">
+            <label
+              htmlFor="confirmPassword"
+              className="my-[5px] text-sm font-bold"
+            >
+              Confirm Password:{" "}
+            </label>
             <Field
               required
               type="password"
               id="confirmPassword"
               name="confirmPassword"
-              className="formik-field"
+              className="input flex flex-col justify-around items-left p-[5px]"
               placeholder="Confirm your password..."
             />
             <ErrorMessage
               name="confirmPassword"
               component="div"
-              className="errorMessage"
+              className="text-red-600"
             />
           </div>
 
-          <button type="submit">SIGN UP</button>
+          <button type="submit" className="primary-button">
+            SIGN UP
+          </button>
           <p>
             Already have an account?{" "}
-            <span onClick={submitHandler}>Sign in.</span>
+            <span
+              onClick={submitHandler}
+              className="text-blue-700 underline hover:cursor-pointer"
+            >
+              Sign in.
+            </span>
           </p>
         </Form>
       </Formik>
