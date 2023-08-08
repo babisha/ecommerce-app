@@ -20,7 +20,7 @@ const ProductPage = () => {
     const fetchProducts = async () => {
       const response = await fetch("https://fakestoreapi.com/products");
       const data = await response.json();
-      console.log(data);
+
       setProducts(data);
     };
     fetchProducts();
@@ -37,13 +37,12 @@ const ProductPage = () => {
       <HamburgerMenu />
 
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-[205px] py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             {/* { 
         products.length > 0 ? <ProductPage product = {products} /> : <div>Loading.....</div> *this is for homepage which I do not need rightn now.*
       }  */}
             {products.map((product) => {
-              console.log(product, "product");
               const {
                 id,
                 title,

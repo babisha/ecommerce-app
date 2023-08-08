@@ -10,11 +10,10 @@ let links: Array<ILinks> = [
   { name: "SHOP", href: "/products" },
   { name: "ABOUT", href: "" },
   { name: "BLOGS", href: "" },
-  { name: "BLOGS", href: "" },
+
   { name: "LOGIN", href: "/login" },
   { name: "CART", href: "/cartpage" },
 ];
-console.log(links);
 
 const Navbar = () => {
   //   [isClick, setIsClick] = useState(false);

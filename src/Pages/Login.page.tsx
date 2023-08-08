@@ -29,7 +29,7 @@ function Login() {
         localStorage.setItem("authenticated", "true");
         navigate("/homepage");
       } else {
-        console.log("Invalid credentials");
+        alert("Invalid credentials");
       }
     }
   };
