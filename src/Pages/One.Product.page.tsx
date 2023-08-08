@@ -64,7 +64,7 @@ function EachProduct() {
       <HamburgerMenu />
 
       <section className="text-gray-600 body-font overflow-hidden">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-[150px] py-24 mx-auto">
           {/* {eachProduct.map((product) => {
             return (  */}
           <div key={eachProduct.id} className="lg:w-4/5 mx-auto flex flex-wrap">
